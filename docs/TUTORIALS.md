@@ -11,7 +11,7 @@
 <a name="data"></a>
 ## Sample datasets
 
-Here we present 4 sample datasets with different formats and every `.adj` file represents a complete dataset.
+In here, we present 4 sample datasets with different formats which are required by different applications respectively. Every `.adj` file represents one complete dataset. Note that the current G-Miner implementation reads undirected graph as the input.
 
 ```bash
 $ cd $GMINER_HOME/sample-datasets
