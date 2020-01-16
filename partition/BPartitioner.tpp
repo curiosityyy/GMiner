@@ -314,7 +314,7 @@ void BPartitioner<BPartVertexT>::run(const WorkerParams& params)
 	{
 		arrangement = params.native_dispatcher ? dispatch_locality(params.input_path.c_str()) : dispatch_run(params.input_path.c_str());
 		master_scatter(*arrangement);
-		vector<string>& assignedSplits = (*arrangement)[0];
+		vector<string>& assignedSplits = (*arrangement)[MASTER_RANK];
 		//reading assigned splits (map)
 		for (vector<string>::iterator it = assignedSplits.begin();
 		        it != assignedSplits.end(); it++)

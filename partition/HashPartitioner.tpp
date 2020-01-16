@@ -61,7 +61,7 @@ void HashPartitioner<BHashVertexT>::run(const WorkerParams& params)
 	{
 		arrangement = params.native_dispatcher ? dispatch_locality(params.input_path.c_str()) : dispatch_run(params.input_path.c_str());
 		master_scatter(*arrangement);
-		vector<string>& assigned_splits = (*arrangement)[0];
+		vector<string>& assigned_splits = (*arrangement)[MASTER_RANK];
 		//reading assigned splits (map)
 		for (vector<string>::iterator it = assigned_splits.begin();
 		        it != assigned_splits.end(); it++)
